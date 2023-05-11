@@ -1,6 +1,6 @@
 # world-clock
 
-Is a SheCodes project where the main purpose is to display the timezone of the search city.
+Is a SheCodes project where the main purpose is to display the timezone of the different city in the drop box menu.
 
 ## Description
 
