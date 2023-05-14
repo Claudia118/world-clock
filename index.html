@@ -13,28 +13,22 @@
     <div class="container">
       <h1>World Clock</h1>
 
-      <select name="cities-menu" id="cities-info">
+      <select name="cities-menu" id="city">
         <option value="">Select city</option>
-        <option value="">Albuquerque</option>
-        <option value="">London</option>
-        <option value="">New York</option>
-        <option value="">Chicago</option>
+        <option value="America/Toronto">Toronto</option>
+        <option value="Europe/London">London</option>
+        <option value="Europe/Moscow">Moscow</option>
+        <option value="America/Puerto_Rico">Puerto Rico</option>
       </select>
 
-      <div class="city" id="albuquerque">
-        <div>
-          <h2>Albuquerque</h2>
-          <div class="date"></div>
+      <div id="cities">
+        <div class="city" id="cities-info">
+          <div>
+            <h2>Toronto</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
         </div>
-        <div class="time"></div>
-      </div>
-
-      <div class="city" id="london">
-        <div>
-          <h2>London</h2>
-          <div class="date"></div>
-        </div>
-        <div class="time"></div>
       </div>
     </div>
     <footer>This project was coded by <strong>Claudia Ortiz</strong> and is <a href="https://github.com/Claudia118/world-clock" target="_blank"> open source on Github</a>.</footer>

@@ -1,12 +1,30 @@
 function updateTime() {
-  let albuquerqueElement = document.querySelector("#albuquerque");
-  let albuquerqueDateElem = albuquerqueElement.querySelector(".date");
-  let albuquerqueTimeElem = albuquerqueElement.querySelector(".time");
-  let albuquerqueTime = moment().tz("US/Mountain");
+  let cityElement = document.querySelector("#cities-info");
+  let cityDateElem = cityElement.querySelector(".date");
+  let cityTimeElem = cityElement.querySelector(".time");
+  let cityTime = moment().tz("US/Mountain");
 
-  albuquerqueDateElem.innerHTML = moment().format("MMMM Do YYYY");
-  albuquerqueTimeElem.innerHTML = `${albuquerqueTime.format("h:mm:ss [<small>]A[</small>]")} `;
+  cityDateElem.innerHTML = cityTime.format("MMMM Do YYYY");
+  cityTimeElem.innerHTML = cityTime.format("h:mm:ss[<small>]A[</small>]");
+}
+
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `
+  <div class="city">
+          <div>
+            <h2>${cityName}</h2>
+            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+          </div>
+          <div class="time">${cityTime.format("h:mm:ss")}<small>${cityTime.format("A")}</small></div>
+  </div>`;
 }
 
 updateTime();
 setInterval(updateTime, 1000);
+
+let citiesMenuElement = document.querySelector("#city");
+citiesMenuElement.addEventListener("change", updateCity);
